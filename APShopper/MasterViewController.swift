@@ -127,6 +127,15 @@ class MasterViewController: UITableViewController, UISearchDisplayDelegate {
 		}
 
 		cell.textLabel!.text = shoppingList.name
+		cell.detailTextLabel!.text = "Contains \(shoppingList.products.count) Products"
+		
+		
+		cell.imageView!.image = UIImage(named: "shoppingListIcon")
+		cell.imageView!.image = cell.imageView!.image!.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
+		
+		//Standard Blue Color : colorWithRed:14.0/255 green:122.0/255 blue:254.0/255 alpha:1.0
+		
+		cell.imageView!.tintColor = UIColor(colorLiteralRed: 14.0/255, green: 122.0/255, blue: 254.0/255, alpha: 1.0)
 		
 		log.debug("Finished!")
 		
