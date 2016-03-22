@@ -15,6 +15,7 @@
 		5B1754211CA0CDC200776E8C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B17541F1CA0CDC200776E8C /* LaunchScreen.storyboard */; };
 		5B17542C1CA0CDC200776E8C /* APShopperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B17542B1CA0CDC200776E8C /* APShopperTests.swift */; };
 		5B1754371CA0CDC200776E8C /* APShopperUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1754361CA0CDC200776E8C /* APShopperUITests.swift */; };
+		5E3ED8C6D1B1DBF556843639 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 721AB6F4CC547818449C5B9F /* Pods.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,9 @@
 		5B1754321CA0CDC200776E8C /* APShopperUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = APShopperUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B1754361CA0CDC200776E8C /* APShopperUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APShopperUITests.swift; sourceTree = "<group>"; };
 		5B1754381CA0CDC200776E8C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		721AB6F4CC547818449C5B9F /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE8EA66CE54948618FD5C61E /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		F195518C6CFA649492555637 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E3ED8C6D1B1DBF556843639 /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +81,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		435AFD76C4424837C282C433 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				721AB6F4CC547818449C5B9F /* Pods.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		5B1754081CA0CDC200776E8C = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +96,8 @@
 				5B17542A1CA0CDC200776E8C /* APShopperTests */,
 				5B1754351CA0CDC200776E8C /* APShopperUITests */,
 				5B1754121CA0CDC200776E8C /* Products */,
+				72BEA7A9311EB5AE5F61D80A /* Pods */,
+				435AFD76C4424837C282C433 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -128,6 +143,15 @@
 			path = APShopperUITests;
 			sourceTree = "<group>";
 		};
+		72BEA7A9311EB5AE5F61D80A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F195518C6CFA649492555637 /* Pods.debug.xcconfig */,
+				AE8EA66CE54948618FD5C61E /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +159,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5B17543B1CA0CDC200776E8C /* Build configuration list for PBXNativeTarget "APShopper" */;
 			buildPhases = (
+				64980965B756725911DDCF63 /* Check Pods Manifest.lock */,
 				5B17540D1CA0CDC200776E8C /* Sources */,
 				5B17540E1CA0CDC200776E8C /* Frameworks */,
 				5B17540F1CA0CDC200776E8C /* Resources */,
+				366BC3F7A45767386EE49E10 /* Embed Pods Frameworks */,
+				E13C7EA356A2C8E122E75F8F /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -253,6 +280,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		366BC3F7A45767386EE49E10 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		64980965B756725911DDCF63 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E13C7EA356A2C8E122E75F8F /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5B17540D1CA0CDC200776E8C /* Sources */ = {
@@ -401,6 +476,7 @@
 		};
 		5B17543C1CA0CDC200776E8C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F195518C6CFA649492555637 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = APShopper/Info.plist;
@@ -412,6 +488,7 @@
 		};
 		5B17543D1CA0CDC200776E8C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AE8EA66CE54948618FD5C61E /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = APShopper/Info.plist;
@@ -488,6 +565,7 @@
 				5B17543D1CA0CDC200776E8C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5B17543E1CA0CDC200776E8C /* Build configuration list for PBXNativeTarget "APShopperTests" */ = {
 			isa = XCConfigurationList;
@@ -496,6 +574,7 @@
 				5B1754401CA0CDC200776E8C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5B1754411CA0CDC200776E8C /* Build configuration list for PBXNativeTarget "APShopperUITests" */ = {
 			isa = XCConfigurationList;
@@ -504,6 +583,7 @@
 				5B1754431CA0CDC200776E8C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
