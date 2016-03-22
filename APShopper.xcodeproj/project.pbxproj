@@ -15,6 +15,9 @@
 		5B1754211CA0CDC200776E8C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B17541F1CA0CDC200776E8C /* LaunchScreen.storyboard */; };
 		5B17542C1CA0CDC200776E8C /* APShopperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B17542B1CA0CDC200776E8C /* APShopperTests.swift */; };
 		5B1754371CA0CDC200776E8C /* APShopperUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1754361CA0CDC200776E8C /* APShopperUITests.swift */; };
+		5B1754471CA0F4ED00776E8C /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1754461CA0F4ED00776E8C /* Product.swift */; };
+		5B1754491CA0F52600776E8C /* ShoppingList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1754481CA0F52600776E8C /* ShoppingList.swift */; };
+		5B17544B1CA0F5C500776E8C /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B17544A1CA0F5C500776E8C /* Category.swift */; };
 		5E3ED8C6D1B1DBF556843639 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 721AB6F4CC547818449C5B9F /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +53,9 @@
 		5B1754321CA0CDC200776E8C /* APShopperUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = APShopperUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B1754361CA0CDC200776E8C /* APShopperUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APShopperUITests.swift; sourceTree = "<group>"; };
 		5B1754381CA0CDC200776E8C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5B1754461CA0F4ED00776E8C /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		5B1754481CA0F52600776E8C /* ShoppingList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingList.swift; sourceTree = "<group>"; };
+		5B17544A1CA0F5C500776E8C /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		721AB6F4CC547818449C5B9F /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE8EA66CE54948618FD5C61E /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		F195518C6CFA649492555637 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -114,6 +120,7 @@
 		5B1754131CA0CDC200776E8C /* APShopper */ = {
 			isa = PBXGroup;
 			children = (
+				5B1754451CA0F4D600776E8C /* Model */,
 				5B1754141CA0CDC200776E8C /* AppDelegate.swift */,
 				5B1754161CA0CDC200776E8C /* MasterViewController.swift */,
 				5B1754181CA0CDC200776E8C /* DetailViewController.swift */,
@@ -141,6 +148,16 @@
 				5B1754381CA0CDC200776E8C /* Info.plist */,
 			);
 			path = APShopperUITests;
+			sourceTree = "<group>";
+		};
+		5B1754451CA0F4D600776E8C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5B1754461CA0F4ED00776E8C /* Product.swift */,
+				5B17544A1CA0F5C500776E8C /* Category.swift */,
+				5B1754481CA0F52600776E8C /* ShoppingList.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 		72BEA7A9311EB5AE5F61D80A /* Pods */ = {
@@ -335,8 +352,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B1754191CA0CDC200776E8C /* DetailViewController.swift in Sources */,
+				5B1754471CA0F4ED00776E8C /* Product.swift in Sources */,
+				5B1754491CA0F52600776E8C /* ShoppingList.swift in Sources */,
 				5B1754171CA0CDC200776E8C /* MasterViewController.swift in Sources */,
 				5B1754151CA0CDC200776E8C /* AppDelegate.swift in Sources */,
+				5B17544B1CA0F5C500776E8C /* Category.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
