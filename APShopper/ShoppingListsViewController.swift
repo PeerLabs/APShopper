@@ -8,12 +8,16 @@
 
 import UIKit
 
-class MasterViewController: UITableViewController, UISearchDisplayDelegate {
+class ShoppingListsViewController: UITableViewController, UISearchDisplayDelegate {
 	
 	let searchController = UISearchController(searchResultsController: nil)
 
-	var detailViewController: DetailViewController? = nil
+	var detailViewController: ShoppingListViewController? = nil
+	
+	let datastore = DataStore.sharedInstance
+	
 	var shoppingLists = [ShoppingList]()
+	
 	var filteredShoppingLists = [ShoppingList]()
 	
 	override func viewDidLoad() {
@@ -28,10 +32,12 @@ class MasterViewController: UITableViewController, UISearchDisplayDelegate {
 		self.navigationItem.rightBarButtonItem = addButton
 		if let split = self.splitViewController {
 		    let controllers = split.viewControllers
-		    self.detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? DetailViewController
+		    self.detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? ShoppingListViewController
 		}
 		
 		setupSearch()
+		
+		shoppingLists = datastore.allMyShoppingLists
 		
 		log.debug("Finished!")
 		
@@ -43,6 +49,8 @@ class MasterViewController: UITableViewController, UISearchDisplayDelegate {
 		
 		self.clearsSelectionOnViewWillAppear = self.splitViewController!.collapsed
 		super.viewWillAppear(animated)
+		
+		self.tableView.reloadData()	
 		
 		log.debug("Finished!")
 		
@@ -65,17 +73,18 @@ class MasterViewController: UITableViewController, UISearchDisplayDelegate {
 		
 		log.debug("Started!")
 		
-		if segue.identifier == "showDetail" {
+		if segue.identifier == "showShoppingList" {
 		    if let indexPath = self.tableView.indexPathForSelectedRow {
 		        let shoppingList = shoppingLists[indexPath.row]
-		        let controller = (segue.destinationViewController as! UINavigationController).topViewController as! DetailViewController
-		        controller.detailItem = shoppingList
+				
+				log.debug("Top Detail View Controller : \((segue.destinationViewController as! UINavigationController).topViewController)")
+		        let controller = (segue.destinationViewController as! UINavigationController).topViewController as! ShoppingListViewController
+		        controller.shoppingList = shoppingList
 		        controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem()
 		        controller.navigationItem.leftItemsSupplementBackButton = true
 		    }
 		}
-		
-		
+
 		log.debug("Finished!")
 		
 	}
@@ -127,7 +136,7 @@ class MasterViewController: UITableViewController, UISearchDisplayDelegate {
 		}
 
 		cell.textLabel!.text = shoppingList.name
-		cell.detailTextLabel!.text = "Contains \(shoppingList.products.count) Products"
+		cell.detailTextLabel!.text = "Contains \(shoppingList.totalNumberOfProductsInList)"
 		
 		
 		cell.imageView!.image = UIImage(named: "shoppingListIcon")
@@ -193,14 +202,6 @@ class MasterViewController: UITableViewController, UISearchDisplayDelegate {
 			return shoppingList.name.lowercaseString.containsString(searchText.lowercaseString)
 			
 		}
-		
-//		filteredShoppingLists = shoppingLists.filter({( shoppingListName : String) -> Bool in
-//			
-//			let categoryMatch = (scope == "All") || (candy.category == scope)
-//			
-//			return categoryMatch && candy.name.lowercaseString.containsString(searchText.lowercaseString)
-//			
-//		})
 		
 		tableView.reloadData()
 		
@@ -312,7 +313,7 @@ class MasterViewController: UITableViewController, UISearchDisplayDelegate {
 
 }
 
-extension MasterViewController: UISearchBarDelegate {
+extension ShoppingListsViewController: UISearchBarDelegate {
 	
 	// MARK: - UISearchBar Delegate
 	func searchBar(searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
@@ -327,7 +328,7 @@ extension MasterViewController: UISearchBarDelegate {
 	
 }
 
-extension MasterViewController: UISearchResultsUpdating {
+extension ShoppingListsViewController: UISearchResultsUpdating {
 	
 	// MARK: - UISearchResultsUpdating Delegate
 	

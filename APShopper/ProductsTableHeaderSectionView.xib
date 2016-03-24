@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ProductsTableHeaderSecionView" customModule="APShopper" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="categoryIconHeader" translatesAutoresizingMaskIntoConstraints="NO" id="H6S-kq-QAV">
+                    <rect key="frame" x="8" y="8" width="14" height="12"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="14" id="BuO-cH-fXU"/>
+                        <constraint firstAttribute="height" constant="12" id="mIt-oU-DKt"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iO3-2t-qQN">
+                    <rect key="frame" x="30" y="5" width="562" height="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <accessibility key="accessibilityConfiguration">
+                <accessibilityTraits key="traits" notEnabled="YES"/>
+            </accessibility>
+            <constraints>
+                <constraint firstItem="iO3-2t-qQN" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="3Qp-Jw-dby"/>
+                <constraint firstItem="H6S-kq-QAV" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="8wb-Y1-EUq"/>
+                <constraint firstItem="iO3-2t-qQN" firstAttribute="leading" secondItem="H6S-kq-QAV" secondAttribute="trailing" constant="8" id="BLz-zU-jZw"/>
+                <constraint firstAttribute="trailing" secondItem="iO3-2t-qQN" secondAttribute="trailing" constant="8" id="Hhl-Na-r6p"/>
+                <constraint firstItem="H6S-kq-QAV" firstAttribute="centerY" secondItem="iO3-2t-qQN" secondAttribute="centerY" id="WH3-5Y-N6m"/>
+                <constraint firstItem="iO3-2t-qQN" firstAttribute="centerY" secondItem="H6S-kq-QAV" secondAttribute="centerY" id="bJx-m5-OuQ"/>
+                <constraint firstAttribute="bottom" secondItem="H6S-kq-QAV" secondAttribute="bottom" constant="8" id="bXG-ds-LBj"/>
+                <constraint firstItem="H6S-kq-QAV" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="qb0-l3-Emv"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="WH3-5Y-N6m"/>
+                    <exclude reference="bXG-ds-LBj"/>
+                    <exclude reference="3Qp-Jw-dby"/>
+                </mask>
+            </variation>
+            <connections>
+                <outlet property="headerTitle" destination="iO3-2t-qQN" id="qjp-Fr-vOq"/>
+            </connections>
+            <point key="canvasLocation" x="803" y="554"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="categoryIconHeader" width="14" height="12"/>
+    </resources>
+</document>

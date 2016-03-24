@@ -8,9 +8,27 @@
 
 import Foundation
 
-class Category {
+class Category: Equatable {
 	
 	var name: String = ""
-	var products: [Product?] = [];
+	var categorisedProducts: [Product?] = [];
+	
+	init(name: String) {
+		
+		self.name = name
+		self.categorisedProducts = [Product]()
+		
+	}
+	
+	func addProduct(product: Product) {
+		
+		self.categorisedProducts.append(product)
+		
+	}
 	
 }
+
+func == (lhs: Category, rhs: Category) -> Bool {
+	return lhs.name == rhs.name
+}
+
