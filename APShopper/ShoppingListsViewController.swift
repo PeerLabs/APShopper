@@ -27,9 +27,13 @@ class ShoppingListsViewController: UITableViewController, UISearchDisplayDelegat
 		super.viewDidLoad()
 		// Do any additional setup after loading the view, typically from a nib.
 		self.navigationItem.leftBarButtonItem = self.editButtonItem()
+		
+		var newShoppingListImage = UIImage(named: "newShoppingList")
+		newShoppingListImage = newShoppingListImage!.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
+		
+		let newShoppingListBarButtonItem = UIBarButtonItem(image: newShoppingListImage!, landscapeImagePhone: newShoppingListImage!, style: .Plain, target: self, action: "promptForShoppingListName")
 
-		let addButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "promptForShoppingListName")
-		self.navigationItem.rightBarButtonItem = addButton
+		self.navigationItem.rightBarButtonItem = newShoppingListBarButtonItem
 		if let split = self.splitViewController {
 		    let controllers = split.viewControllers
 		    self.detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? ShoppingListViewController

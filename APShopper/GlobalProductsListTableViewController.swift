@@ -91,19 +91,18 @@ class GlobalProductsListTableViewController: UITableViewController {
 		self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Cancel, target: self, action:"didTapCancelButton")
 		
 		
-		var buttonImage = UIImage(named: "addToList")
-		buttonImage = buttonImage!.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
+		var addToListButtonImage = UIImage(named: "addToList")
+		addToListButtonImage = addToListButtonImage!.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
 		
 
-		let addToListButton = UIBarButtonItem(image: buttonImage!, landscapeImagePhone: buttonImage!, style: .Done, target: self, action: "didTapAddProducts")
+		let addToListButton = UIBarButtonItem(image: addToListButtonImage!, landscapeImagePhone: addToListButtonImage!, style: .Done, target: self, action: "didTapAddProducts")
 		
-		self.navigationItem.rightBarButtonItems = [addToListButton, UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "didTapAddProduct")]
-			
+		var newProductButtonImage = UIImage(named: "newProduct")
+		newProductButtonImage = newProductButtonImage!.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
 		
-//		setupSearch()
-//		
-//		self.title = "Product List"
-//		self.navigationItem.prompt = shoppingList?.name
+		let newProductButton = UIBarButtonItem(image: newProductButtonImage!, landscapeImagePhone: newProductButtonImage!, style: .Done, target: self, action: "didTapAddProduct")
+
+		self.navigationItem.rightBarButtonItems = [addToListButton, newProductButton]
 		
 		productsForSelectionList = datastore.globalProducts
 		
