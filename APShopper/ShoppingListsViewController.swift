@@ -31,7 +31,7 @@ class ShoppingListsViewController: UITableViewController, UISearchDisplayDelegat
 		var newShoppingListImage = UIImage(named: "newShoppingList")
 		newShoppingListImage = newShoppingListImage!.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
 		
-		let newShoppingListBarButtonItem = UIBarButtonItem(image: newShoppingListImage!, landscapeImagePhone: newShoppingListImage!, style: .Plain, target: self, action: "promptForShoppingListName")
+		let newShoppingListBarButtonItem = UIBarButtonItem(image: newShoppingListImage!, landscapeImagePhone: newShoppingListImage!, style: .Plain, target: self, action: #selector(ShoppingListsViewController.promptForShoppingListName))
 
 		self.navigationItem.rightBarButtonItem = newShoppingListBarButtonItem
 		if let split = self.splitViewController {
@@ -191,6 +191,9 @@ class ShoppingListsViewController: UITableViewController, UISearchDisplayDelegat
 		searchController.searchResultsUpdater = self
 		searchController.dimsBackgroundDuringPresentation = false
 		definesPresentationContext = true
+		searchController.searchBar.tintColor = UIColor(colorLiteralRed: 14.0/255, green: 122.0/255, blue: 254.0/255, alpha: 1.0)
+		searchController.searchBar.backgroundColor = UIColor.whiteColor()
+		searchController.title = "Search Shopping List Names"
 		tableView.tableHeaderView = searchController.searchBar
 		
 		log.debug("Finished!")

@@ -88,19 +88,19 @@ class GlobalProductsListTableViewController: UITableViewController {
 		// Do any additional setup after loading the view, typically from a nib.
 		//self.configureView()
 		
-		self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Cancel, target: self, action:"didTapCancelButton")
+		self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Cancel, target: self, action:#selector(GlobalProductsListTableViewController.didTapCancelButton))
 		
 		
 		var addToListButtonImage = UIImage(named: "addToList")
 		addToListButtonImage = addToListButtonImage!.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
 		
 
-		let addToListButton = UIBarButtonItem(image: addToListButtonImage!, landscapeImagePhone: addToListButtonImage!, style: .Done, target: self, action: "didTapAddProducts")
+		let addToListButton = UIBarButtonItem(image: addToListButtonImage!, landscapeImagePhone: addToListButtonImage!, style: .Done, target: self, action: #selector(GlobalProductsListTableViewController.didTapAddProducts))
 		
 		var newProductButtonImage = UIImage(named: "newProduct")
 		newProductButtonImage = newProductButtonImage!.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
 		
-		let newProductButton = UIBarButtonItem(image: newProductButtonImage!, landscapeImagePhone: newProductButtonImage!, style: .Done, target: self, action: "didTapAddProduct")
+		let newProductButton = UIBarButtonItem(image: newProductButtonImage!, landscapeImagePhone: newProductButtonImage!, style: .Done, target: self, action: #selector(GlobalProductsListTableViewController.didTapAddProduct))
 
 		self.navigationItem.rightBarButtonItems = [addToListButton, newProductButton]
 		

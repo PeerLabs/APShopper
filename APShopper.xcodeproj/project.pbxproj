@@ -252,6 +252,7 @@
 				TargetAttributes = {
 					5B1754101CA0CDC200776E8C = {
 						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = 8ND94GJC38;
 					};
 					5B1754261CA0CDC200776E8C = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -515,6 +516,7 @@
 			baseConfigurationReference = F195518C6CFA649492555637 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = APShopper/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.peerlabs.APShopper;
@@ -527,6 +529,7 @@
 			baseConfigurationReference = AE8EA66CE54948618FD5C61E /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = APShopper/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.peerlabs.APShopper;
